@@ -1,4 +1,4 @@
-const BASE_URL = "https://65202f63906e276284c4270d.mockapi.io/catalog";
+const BASE_URL = import.meta.env.VITE_BASE_URL;
 
 class ApiError extends Error {
   public response: Response;

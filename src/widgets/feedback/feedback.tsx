@@ -50,8 +50,8 @@ export default function Feedback() {
         ? Array.from({ length: 3 }).map((_, idx) => (
             <SkeletonFeedback key={idx} />
           ))
-        : feedbacks.map((item: FormType) => (
-            <div key={item.id} className="border-b pb-4">
+        : feedbacks.map((item: FormType, index) => (
+            <div key={`${item.id}-${index}`} className={`${index < feedbacks.length - 1 && 'border-b'} pb-4`}>
               <div className="flex items-center justify-between mb-1">
                 <span className="font-semibold">{item.userName}</span>
                 <div className="text-yellow-500">
